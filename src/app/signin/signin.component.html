@@ -1,0 +1,22 @@
+<main class="form-signin">
+    <form [formGroup]="signinForm" (ngSubmit)="loginUser()">
+      <h1 class="text-center">Clinic App</h1>
+      <h3 class="h3 mb-3 fw-normal text-center">Please sign in</h3>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com" required>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+  </main>
