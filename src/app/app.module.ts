@@ -16,6 +16,7 @@ import { SubmenuComponent } from './submenu/submenu.component';
 import { OptionmenuComponent } from './optionmenu/optionmenu.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SignupComponent } from './signup/signup.component';
     SubmenuComponent,
     OptionmenuComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
