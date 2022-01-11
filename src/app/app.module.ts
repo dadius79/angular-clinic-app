@@ -9,7 +9,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 import { PatientsComponent } from './patients/patients.component';
 import { MenuComponent } from './menu/menu.component';
 import { SubmenuComponent } from './submenu/submenu.component';
@@ -22,7 +21,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   declarations: [
     AppComponent,
     MedicineComponent,
-    HomeComponent,
     PatientsComponent,
     MenuComponent,
     SubmenuComponent,
