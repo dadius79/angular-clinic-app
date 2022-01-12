@@ -10,12 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Name</td>
-                <td>Gender</td>
-                <td>Phone Number</td>
-                <td>Registered By</td>
-                <td>Action</td>
+            <tr *ngFor="let patientRow of patient">
+                <td>{{patientRow.name}}</td>
+                <td>{{patientRow.sex}}</td>
+                <td>{{patientRow.phone_number}}</td>
+                <td>{{patientRow.registered_by}}</td>
+                <td>
+                    <a class="btn btn-md btn-primary" href="#">Edit</a>
+                    <a class="btn btn-md btn-danger" href="#">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>
