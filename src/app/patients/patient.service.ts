@@ -3,13 +3,16 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from './../authentication/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
 
-  private endpoint = 'http://127.0.0.1:8000/api/admin';
+  //private endpoint = 'http://127.0.0.1:8000/api/admin';
+
+  endpoint: String = environment.apiUrl;
   
   constructor(private http: HttpClient, private authService: AuthService) { }
 
