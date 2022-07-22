@@ -7,6 +7,9 @@ import { AuthInterceptor } from './authentication/authconfig.interceptor';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+
+import { PatientModuleModule } from './patient-module/patient-module.module';
+
 import { MedicineComponent } from './medicine/medicine.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PatientsComponent } from './patients/patients.component';
@@ -34,7 +37,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PatientModuleModule
   ],
   providers: [
     {
