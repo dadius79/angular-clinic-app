@@ -4,6 +4,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from './../../authentication/auth.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/interfaces/patient';
 
 @Injectable({
@@ -11,11 +12,13 @@ import { Patient } from 'src/app/interfaces/patient';
 })
 export class PatientService {
 
-  //private endpoint = 'http://127.0.0.1:8000/api/admin';
-
   endpoint: String = environment.apiUrl;
   
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(
+    private http: HttpClient, 
+    private authService: AuthService,
+    public router: Router
+    ) { }
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,12 +37,24 @@ export class PatientService {
     );
   }
 
-  addPatient(patient: Patient): Observable<any> {
-    let api = `${this.endpoint}/patient/add/`;
-    return this.http.post<any>(api, patient, this.httpOptions)
-    .pipe(
+  getPatient(): Observable<any> {
+    let id: number = 1;
+    let api = `${this.endpoint}/patient/find/${id}`;
+    return this.http.get<any>(api, this.httpOptions).pipe(
+      map((patientData: any) => {
+        return patientData.data;
+      }),
       catchError(this.handleError)
-    )
+    );
+  }
+
+  addPatient(patient: Patient){
+    let api = `${this.endpoint}/patient/add`;
+    return this.http.post<any>(api, patient, this.httpOptions)
+    .subscribe((res: any) => {
+      console.log(res);
+      this.router.navigate(['patients']);
+    })
   }
 
   handleError(error: HttpErrorResponse){

@@ -15,10 +15,10 @@ export class ListPatientsComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   ngOnInit(): void {
-    this.getPatient();
+    this.getPatients();
   }
 
-  getPatient(): void {
+  getPatients(): void {
     this.patientService.getPatients().subscribe(patient => this.patient = patient);
   }
 
