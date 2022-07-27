@@ -41,14 +41,27 @@ export class PatientService {
     let id: number = 1;
     let api = `${this.endpoint}/patient/find/${id}`;
     return this.http.get<any>(api, this.httpOptions).pipe(
-      map((patientData: any) => {
-        return patientData.data;
+      map((patient: any) => {
+        return patient.data;
       }),
       catchError(this.handleError)
-    );
+    )
   }
 
+  /*getPatient() {
+    console.log("Get Patient Service Reached");
+  }*/
+
   addPatient(patient: Patient){
+    let api = `${this.endpoint}/patient/add`;
+    return this.http.post<any>(api, patient, this.httpOptions)
+    .subscribe((res: any) => {
+      console.log(res);
+      this.router.navigate(['patients']);
+    })
+  }
+
+  editPatient(patient: Patient){
     let api = `${this.endpoint}/patient/add`;
     return this.http.post<any>(api, patient, this.httpOptions)
     .subscribe((res: any) => {

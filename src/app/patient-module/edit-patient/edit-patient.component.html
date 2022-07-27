@@ -1,10 +1,10 @@
 <div class="container">
     <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mx-auto">
-        <form>
+        <form [formGroup]="editPatientForm" (ngSubmit)="editPatient()">
             <h3 class="text-center">Edit Patient</h3>
             <h5 class="h5 mb-3 fw-normal text-center">Ensure You've Entered All the Details</h5>
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter the Patient Name" required>
+                <input type="text" class="form-control" id="name" value="{{patient.name}}" placeholder="Enter the Patient Name" required>
                 <label for="floatingInput">Patient Name</label>
             </div>
             <div class="form-floating mb-2">
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="form-floating mb-2">
-                <input type="date" class="form-control" formControlName="date_of_birth" id="date_of_birth" placeholder="Enter the Date of Birth" required>
+                <input type="date" class="form-control" formControlName="date_of_birth" id="date_of_birth" value="{{patient.date_of_birth}}" placeholder="Enter the Date of Birth" required>
                 <label for="floatingInput">Date of Birth</label>
             </div>
             <div class="form-floating mb-2">
@@ -32,19 +32,19 @@
                 </div>
             </div>
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="address" id="address" placeholder="Enter the Address" required>
+                <input type="text" class="form-control" formControlName="address" id="address" value="{{patient.address}}" placeholder="Enter the Address" required>
                 <label for="floatingInput">Address</label>
             </div>
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="national_id" id="national_id" placeholder="Enter the National Id Number" required>
+                <input type="text" class="form-control" formControlName="national_id" id="national_id" value="{{patient.national_id}}" placeholder="Enter the National Id Number" required>
                 <label for="floatingInput">National Id</label>
             </div>
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="phone_number" id="phone_number" placeholder="Enter the Phone Number" required>
+                <input type="text" class="form-control" formControlName="phone_number" id="phone_number" value="{{patient.phone_number}}" placeholder="Enter the Phone Number" required>
                 <label for="floatingInput">Phone Number</label>
             </div>
             <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="emergency_number" id="emergency_number" placeholder="Enter the Emergency Phone Number">
+                <input type="text" class="form-control" formControlName="emergency_number" id="emergency_number" value="{{patient.emergency_number}}" placeholder="Enter the Emergency Phone Number">
                 <label for="floatingInput">Emergency Phone Number</label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Edit Patient</button>
