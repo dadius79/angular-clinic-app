@@ -12,6 +12,7 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
 import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
+import { VisitsListComponent } from './visits-list/visits-list.component';
 
 
 
@@ -20,7 +21,8 @@ import { DeletePatientComponent } from './delete-patient/delete-patient.componen
     AddPatientComponent,
     ListPatientsComponent,
     EditPatientComponent,
-    DeletePatientComponent
+    DeletePatientComponent,
+    VisitsListComponent
   ],
   imports: [
     BrowserModule,

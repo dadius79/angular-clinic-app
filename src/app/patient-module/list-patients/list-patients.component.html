@@ -19,8 +19,9 @@
                 <td>{{patientRow.phone_number}}</td>
                 <td>{{patientRow.registered_by}}</td>
                 <td>
-                    <a class="btn btn-md btn-primary" routerLink="/edit-patient/{{patientRow.id}}">Edit</a>
-                    <a class="btn btn-md btn-danger" routerLink="/delete-patient/{{patientRow.id}}">Delete</a>
+                    <a class="btn btn-sm btn-primary ml-2" routerLink="/edit-patient/{{patientRow.id}}">Edit</a>
+                    <a class="btn btn-sm btn-success ml-2" routerLink="/patient-visits/{{patientRow.id}}">Visits</a>
+                    <a class="btn btn-sm btn-danger ml-2" routerLink="/delete-patient/{{patientRow.id}}">Delete</a>
                 </td>
             </tr>
         </tbody>

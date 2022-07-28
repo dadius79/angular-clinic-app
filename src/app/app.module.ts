@@ -12,7 +12,6 @@ import { PatientModuleModule } from './patient-module/patient-module.module';
 
 import { MedicineComponent } from './medicine/medicine.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PatientsComponent } from './patients/patients.component';
 import { MenuComponent } from './menu/menu.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { OptionmenuComponent } from './optionmenu/optionmenu.component';
@@ -24,7 +23,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   declarations: [
     AppComponent,
     MedicineComponent,
-    PatientsComponent,
     MenuComponent,
     SubmenuComponent,
     OptionmenuComponent,

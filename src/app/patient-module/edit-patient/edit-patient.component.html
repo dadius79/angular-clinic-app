@@ -1,53 +1,57 @@
 <div class="container">
     <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mx-auto">
-        <form [formGroup]="editPatientForm" (ngSubmit)="editPatient()">
-            <h3 class="text-center">Edit Patient</h3>
-            <h5 class="h5 mb-3 fw-normal text-center">Ensure You've Entered All the Details</h5>
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter the Patient Name" required>
-                <label for="floatingInput">Patient Name</label>
+        <div class="card mt-2">
+            <div class="card-body">
+                <form [formGroup]="editPatientForm" (ngSubmit)="editPatient()">
+                    <h3 class="text-center">Edit Patient</h3>
+                    <h5 class="h5 mb-3 fw-normal text-center">Ensure You've Entered All the Details</h5>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter the Patient Name" required>
+                        <label for="floatingInput">Patient Name</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="sex" id="sex_radio1" value="Male" checked="{{ patient.sex == 'Male' }}">
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="sex" id="sex_radio2" value="Female" checked="{{ patient.sex == 'Female' }}">
+                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="date" class="form-control" formControlName="date_of_birth" id="date_of_birth" placeholder="Enter the Date of Birth" required>
+                        <label for="floatingInput">Date of Birth</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="national_status" id="status_radio1" value="Citizen" checked="{{ patient.national_status == 'Citizen'}}">
+                            <label class="form-check-label" for="inlineRadio1">Citizen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="national_status" id="status_radio2" value="Foreigner" checked="{{ patient.national_status == 'Foreigner'}}">
+                            <label class="form-check-label" for="inlineRadio2">Foreigner</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" formControlName="address" id="address" placeholder="Enter the Address" required>
+                        <label for="floatingInput">Address</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" formControlName="national_id" id="national_id" placeholder="Enter the National Id Number" required>
+                        <label for="floatingInput">National Id</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" formControlName="phone_number" id="phone_number" placeholder="Enter the Phone Number" required>
+                        <label for="floatingInput">Phone Number</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" formControlName="emergency_number" id="emergency_number" placeholder="Enter the Emergency Phone Number">
+                        <label for="floatingInput">Emergency Phone Number</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Edit Patient</button>
+                </form>
             </div>
-            <div class="form-floating mb-2">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" formControlName="sex" id="sex_radio1" value="Male" checked="{{ patient.sex == 'Male' }}">
-                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" formControlName="sex" id="sex_radio2" value="Female" checked="{{ patient.sex == 'Female' }}">
-                    <label class="form-check-label" for="inlineRadio2">Female</label>
-                </div>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="date" class="form-control" formControlName="date_of_birth" id="date_of_birth" placeholder="Enter the Date of Birth" required>
-                <label for="floatingInput">Date of Birth</label>
-            </div>
-            <div class="form-floating mb-2">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" formControlName="national_status" id="status_radio1" value="Citizen" checked="{{ patient.national_status == 'Citizen'}}">
-                    <label class="form-check-label" for="inlineRadio1">Citizen</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" formControlName="national_status" id="status_radio2" value="Foreigner" checked="{{ patient.national_status == 'Foreigner'}}">
-                    <label class="form-check-label" for="inlineRadio2">Foreigner</label>
-                </div>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="address" id="address" placeholder="Enter the Address" required>
-                <label for="floatingInput">Address</label>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="national_id" id="national_id" placeholder="Enter the National Id Number" required>
-                <label for="floatingInput">National Id</label>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="phone_number" id="phone_number" placeholder="Enter the Phone Number" required>
-                <label for="floatingInput">Phone Number</label>
-            </div>
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" formControlName="emergency_number" id="emergency_number" placeholder="Enter the Emergency Phone Number">
-                <label for="floatingInput">Emergency Phone Number</label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Edit Patient</button>
-        </form>
+        </div>
     </div>
 </div>

@@ -65,6 +65,15 @@ export class PatientService {
     })
   }
 
+  deletePatient(id: number){
+    let api = `${this.endpoint}/patient/delete/${id}`;
+    return this.http.post<any>(api, this.httpOptions)
+    .subscribe((res: any) => {
+      console.log(res);
+      this.router.navigate(['patients']);
+    })
+  }
+
   handleError(error: HttpErrorResponse){
     let msg = '';
     if(error.error instanceof ErrorEvent) {
