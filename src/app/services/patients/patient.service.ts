@@ -37,8 +37,7 @@ export class PatientService {
     );
   }
 
-  getPatient(): Observable<any> {
-    let id: number = 1;
+  getPatient(id: number): Observable<any> {
     let api = `${this.endpoint}/patient/find/${id}`;
     return this.http.get<any>(api, this.httpOptions).pipe(
       map((patient: any) => {
@@ -47,10 +46,6 @@ export class PatientService {
       catchError(this.handleError)
     )
   }
-
-  /*getPatient() {
-    console.log("Get Patient Service Reached");
-  }*/
 
   addPatient(patient: Patient){
     let api = `${this.endpoint}/patient/add`;
@@ -61,9 +56,9 @@ export class PatientService {
     })
   }
 
-  editPatient(patient: Patient){
-    let api = `${this.endpoint}/patient/add`;
-    return this.http.post<any>(api, patient, this.httpOptions)
+  editPatient(patient: Patient, id: number){
+    let api = `${this.endpoint}/patient/edit/${id}`;
+    return this.http.put<any>(api, patient, this.httpOptions)
     .subscribe((res: any) => {
       console.log(res);
       this.router.navigate(['patients']);

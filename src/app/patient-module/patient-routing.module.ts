@@ -13,8 +13,8 @@ import { AuthGuard } from '../authentication/auth.guard';
 const routes: Routes = [
   {path: 'patients', component: ListPatientsComponent, canActivate: [AuthGuard] },
   {path: 'add-patient', component: AddPatientComponent, canActivate: [AuthGuard] },
-  {path: 'edit-patient', component: EditPatientComponent, canActivate: [AuthGuard] },
-  {path: 'delete-patient', component: DeletePatientComponent, canActivate: [AuthGuard] }
+  {path: 'edit-patient/:id', component: EditPatientComponent, canActivate: [AuthGuard] },
+  {path: 'delete-patient/:id', component: DeletePatientComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

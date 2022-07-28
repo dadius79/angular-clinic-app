@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Form } from '@angular/forms';
 
 import { Patient } from 'src/app/interfaces/patient';
 import { PatientService } from 'src/app/services/patients/patient.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-patient',
@@ -16,9 +16,10 @@ export class EditPatientComponent implements OnInit {
   editPatientForm: FormGroup;
 
   constructor(
-    public patientService: PatientService,
-    public fb: FormBuilder,
-    public router: Router
+    private patientService: PatientService,
+    private fb: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { 
     this.editPatientForm = this.fb.group({
       name: [''],
@@ -38,13 +39,32 @@ export class EditPatientComponent implements OnInit {
   }
 
   getPatient(): void{
-    this.patientService.getPatient().subscribe(
+    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.patientService.getPatient(id).subscribe(
       patient => {
         this.patient = patient;
-        console.log(patient);
+        this.fillEditPatientForm();
       });
   }
 
-  editPatient(){}
+  editPatient(){
+    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.patientService.editPatient(this.editPatientForm.value, id);
+  }
+
+  fillEditPatientForm(){
+    this.editPatientForm.patchValue(
+      {
+        name:  this.patient.name,
+        sex: this.patient.sex,
+        date_of_birth: this.patient.date_of_birth,
+        national_status: this.patient.national_status,
+        address: this.patient.address,
+        national_id : this.patient.national_id,
+        phone_number: this.patient.phone_number,
+        emergency_number: this.patient.emergency_number
+      }
+    )
+  }
 
 }
