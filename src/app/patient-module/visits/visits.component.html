@@ -1,8 +1,5 @@
 <div class="container pt-2">
-    <div class="row mt-2">
-        <p><a routerLink="/create-visit/{{patientId}}" class="btn btn-md btn-primary">Create Visit</a></p>
-    </div>
-    <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <table id="example" class="table table-striped table-bordered mt-2" style="width:100%">
         <thead>
             <tr>
                 <th>Patient Id</th>
@@ -23,7 +20,8 @@
                 <td>{{visitRow.status}}</td>
                 <td>{{visitRow.created_by}}</td>
                 <td>
-                    <a class="btn btn-sm btn-primary ml-2" routerLink="/view-patient-visit">View</a>
+                    <a class="btn btn-sm btn-primary ml-2" routerLink="/edit-visit/{{visitRow.patient_id}}/{{visitRow.id}}">Edit</a>
+                    <a class="btn btn-sm btn-danger ml-2" routerLink="/delete-visit/{{visitRow.patient_id}}/{{visitRow.id}}">Delete</a>
                 </td>
             </tr>
         </tbody>

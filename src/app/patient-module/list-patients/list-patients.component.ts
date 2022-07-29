@@ -10,7 +10,7 @@ import { PatientService } from 'src/app/services/patients/patient.service';
 })
 export class ListPatientsComponent implements OnInit {
 
-  patient: Patient[] = [];
+  patient: any[] = [];
 
   constructor(private patientService: PatientService) { }
 

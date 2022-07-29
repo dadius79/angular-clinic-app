@@ -13,6 +13,10 @@ import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { VisitsListComponent } from './visits-list/visits-list.component';
+import { VisitsComponent } from './visits/visits.component';
+import { AddVisitComponent } from './add-visit/add-visit.component';
+import { EditVisitComponent } from './edit-visit/edit-visit.component';
+import { DeleteVisitComponent } from './delete-visit/delete-visit.component';
 
 
 
@@ -22,7 +26,11 @@ import { VisitsListComponent } from './visits-list/visits-list.component';
     ListPatientsComponent,
     EditPatientComponent,
     DeletePatientComponent,
-    VisitsListComponent
+    VisitsListComponent,
+    VisitsComponent,
+    AddVisitComponent,
+    EditVisitComponent,
+    DeleteVisitComponent
   ],
   imports: [
     BrowserModule,

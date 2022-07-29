@@ -47,6 +47,16 @@ export class PatientService {
     )
   }
 
+  getPatientVisits(id: number): Observable<any> {
+    let api = `${this.endpoint}/visit/patient-visits/${id}`;
+    return this.http.get<any>(api, this.httpOptions).pipe(
+      map((visits: any) => {
+        return visits.data;
+      }),
+      catchError(this.handleError)
+    )
+  }
+
   addPatient(patient: Patient){
     let api = `${this.endpoint}/patient/add`;
     return this.http.post<any>(api, patient, this.httpOptions)
