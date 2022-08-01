@@ -1,1 +1,43 @@
-<p>add-visit works!</p>
+<div class="container">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="createVisitForm" (ngSubmit)="addVisit()">
+                    <h3 class="text-center">Create Visit</h3>
+                    <h5 class="h5 mb-3 fw-normal text-center">Ensure You've Entered All the Details</h5>
+                    <input type="hidden" class="form-control" id="patient_id" formControlName="patient_id">
+                    <input type="hidden" class="form-control" id="created_by" formControlName="created_by">
+                    <div class="form-floating mb-3">
+                        <h5>Consultation</h5>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="consultation" id="consultation_radio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="consultation" id="consultation_radio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <h5>Over the Counter</h5>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="over_the_counter" id="over_the_counter_radio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="over_the_counter" id="over_the_counter_radio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-control form-control-sm" formControlName="doctor_id">
+                            <option [ngValue]="null" disabled>Select Doctor</option>
+                            <option *ngFor="let admin of admins" [ngValue]="admin.id">{{admin.name}}</option>
+                        </select>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Create Visit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

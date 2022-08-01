@@ -9,6 +9,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { VisitsListComponent } from './visits-list/visits-list.component';
 import { VisitsComponent } from './visits/visits.component';
+import { AddVisitComponent } from './add-visit/add-visit.component';
 
 import { AuthGuard } from '../authentication/auth.guard';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'edit-patient/:id', component: EditPatientComponent, canActivate: [AuthGuard] },
   {path: 'delete-patient/:id', component: DeletePatientComponent, canActivate: [AuthGuard] },
   {path: 'patient-visits/:id', component: VisitsListComponent, canActivate: [AuthGuard]},
-  {path: 'visits', component: VisitsComponent, canActivate: [AuthGuard]}
+  {path: 'visits', component: VisitsComponent, canActivate: [AuthGuard]},
+  {path: 'create-visit/:id', component: AddVisitComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
