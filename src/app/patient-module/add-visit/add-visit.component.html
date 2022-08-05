@@ -30,10 +30,16 @@
                         </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-control form-control-sm" formControlName="doctor_id">
-                            <option [ngValue]="null" disabled>Select Doctor</option>
-                            <option *ngFor="let admin of admins" [ngValue]="admin.id">{{admin.name}}</option>
-                        </select>
+                        <!--<select class="form-control form-control-sm" formControlName="doctor_id">-->
+                        <ng-select
+                            id="doctor_id"
+                            [searchable]="true"
+                            [multiple]="false"
+                            formControlName="doctor_id"
+                            placeholder="Select Doctor"
+                          >
+                            <ng-option *ngFor="let admin of admins" [value]="admin.id">{{admin.name}}</ng-option>
+                        </ng-select>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Create Visit</button>
                 </form>

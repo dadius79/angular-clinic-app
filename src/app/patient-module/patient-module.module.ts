@@ -4,7 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../authentication/authconfig.interceptor';
 
+
+import { NgSelectModule } from '@ng-select/ng-select';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 import { PatientRoutingModule } from './patient-routing.module';
 
@@ -36,6 +39,7 @@ import { DeleteVisitComponent } from './delete-visit/delete-visit.component';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgSelectModule,
     FormsModule,
     PatientRoutingModule
   ],
